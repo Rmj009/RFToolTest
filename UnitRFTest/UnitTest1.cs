@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace UnitRFTest
@@ -23,8 +24,39 @@ namespace UnitRFTest
         [Test]
         public void Test1()
         {
+            //  Arrange
+            var tstclass = new Class1();
+            //  Act
+            run_cmd();
+            //  Assert
+            Assert.IsFalse(true);
             Assert.Pass();
         }
+        private void run_cmd() // running python3
+        {
+
+            string fileName = @"C:\sample_script.py";
+
+            System.Diagnostics.Process p = new Process();
+            p.StartInfo = new ProcessStartInfo(@"C:\Python27\python.exe", fileName)
+            {
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            p.Start();
+
+            string output = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
+
+            Console.WriteLine(output);
+
+            Console.ReadLine();
+
+        }
+
+
+        #region TOYOTA Script
         private void button1_Click(object sender, EventArgs e)
         {
             int time = 0;
@@ -170,5 +202,6 @@ namespace UnitRFTest
             }
             dAQ970A.Close();
         }
+#endregion
     }
 }
