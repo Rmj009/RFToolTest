@@ -38,7 +38,7 @@ namespace UnitRFTest
             string fileName = @"C:\sample_script.py";
 
             System.Diagnostics.Process p = new Process();
-            p.StartInfo = new ProcessStartInfo(@"C:\Python27\python.exe", fileName)
+            p.StartInfo = new ProcessStartInfo(@"C:\Python3\python.exe", fileName) // mounting python3
             {
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
