@@ -60,6 +60,9 @@ namespace UnitRFTest
         private void button1_Click(object sender, EventArgs e)
         {
             int time = 0;
+            //Instrument.MT8872 mT8872 = new Instrument.MT8872();
+            //mT8872.Init(@"TCPIP0::192.168.1.1::56001::SOCKET");
+//----------------------------------------------------------------------------------------------------------------------
             System.Threading.Thread t = new System.Threading.Thread(() =>
             {
                 //---------- daq970a
@@ -188,6 +191,65 @@ namespace UnitRFTest
 
             t.IsBackground = true;
             t.Start();
+            //----------------------------------------------------------------------------------------------------------------------
+            //System.Threading.Thread t1 = new System.Threading.Thread(() => {
+            //    //---------- daq970a
+            //    Instrument.MT8872 mT8872 = new Instrument.MT8872();
+
+            //    while ((time++) < 100)
+            //    {
+            //        try
+            //        {
+            //            mT8872.Init(@"TCPIP0::192.168.1.1::56001::SOCKET");
+            //            Instrument.OUT_BT_MEASURE_RESULT btMeasureResult = new Instrument.OUT_BT_MEASURE_RESULT();
+            //            mT8872.GetEquipmentBTMeasure(@"DH1", 39, ref btMeasureResult);
+
+            //            Console.WriteLine("RF power : " + btMeasureResult.power);
+
+            //            mT8872.Close();
+            //            System.Threading.Thread.Sleep(800);
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            Console.WriteLine("RF err : " + ex.Message);
+            //        }
+            //    }
+            //});
+
+            //t1.IsBackground = true;
+            //t1.Start();
+            //  Instrument.DAQ970A dAQ970A = new Instrument.DAQ970A();
+
+            // dAQ970A.Close();
+
+            //  MessageBox.Show("a");
+
+            //   dAQ970A = new Instrument.DAQ970A();
+            //  dAQ970A.Init(@"TCPIP0::169.254.48.161::inst0::INSTR", "101");
+
+            ///---------
+            //---------- power
+            //Instrument.E36313A e36313A = new Instrument.E36313A();
+            //e36313A.Init(@"TCPIP0::192.168.10.5::inst0::INSTR");
+            //e36313A.Channel = 1;
+            //e36313A.Voltage = 5;
+            //e36313A.Current = 0.1;
+
+            //e36313A.OnPower();
+
+            //double a = e36313A.GetVoltage();
+            //double b = e36313A.GetCurrent();
+
+            //MessageBox.Show("aaa --> " + a.ToString() + "\r\n" + "bbb --> " + b.ToString());
+
+            //System.Threading.Thread.Sleep(5000);
+
+            //e36313A.OffPower();
+
+            //a = e36313A.GetVoltage();
+            //b = e36313A.GetCurrent();
+
+            //MessageBox.Show("aaa --> " + a.ToString() + "\r\n" + "bbb --> " + b.ToString());
         }
         private void button2_Click(object sender, EventArgs e)
         {
