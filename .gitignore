@@ -1,0 +1,10 @@
+# obj
+
+
+UnitRFest/obj/*
+
+
+# bin
+
+
+UnitRFest/bin/Debug/net6.0/*
