@@ -25,7 +25,7 @@ namespace UnitRFTest
         public void Test1()
         {
             //  Arrange
-            var tstclass = new Class1();
+            var PushingMsg = new PushingMsg();
             //  Act
             run_cmd();
             //  Assert
